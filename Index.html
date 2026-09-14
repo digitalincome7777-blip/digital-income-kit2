@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>100 ChatGPT Prompts for Small Businesses</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFEAE0;
+    --paper-dark:#E4DDCC;
+    --ink:#201F1D;
+    --pink:#FF5A8A;
+    --yellow:#FFD23F;
+    --teal:#227C7C;
+    --line:#201F1D;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Space Mono', monospace;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:960px;margin:0 auto;padding:0 24px;}
+  a{color:inherit;}
+
+  body::before{
+    content:"";
+    position:fixed;inset:0;
+    pointer-events:none;
+    opacity:.05;
+    background-image:radial-gradient(var(--ink) 1px, transparent 1px);
+    background-size:3px 3px;
+    z-index:1000;
+  }
+
+  /* HEADER */
+  header{
+    padding:16px 0;
+    border-bottom:3px solid var(--line);
+  }
+  .header-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .brand{font-family:'Archivo Black',sans-serif;font-size:15px;padding-top:6px;}
+
+  .header-right{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    flex-wrap:wrap;
+    margin-left:auto;
+  }
+
+  .pay-tab{
+    font-family:'Space Mono',monospace;
+    font-weight:700;
+    font-size:13px;
+    text-decoration:none;
+    background:var(--yellow);
+    color:var(--ink);
+    border:3px solid var(--ink);
+    padding:9px 18px;
+    box-shadow:3px 3px 0 var(--ink);
+    transition:transform .12s ease, box-shadow .12s ease;
+    white-space:nowrap;
+  }
+  .pay-tab:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink);}
+  .pay-tab:active{transform:translate(1px,1px);box-shadow:1px 1px 0 var(--ink);}
+
+  /* single email+mobile capture widget - top right corner, only instance on the page */
+  .capture-widget{
+    border:3px solid var(--ink);
+    background:var(--paper-dark);
+    padding:10px 12px;
+    width:230px;
+  }
+  .capture-widget .cw-label{
+    font-size:10.5px;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    margin-bottom:6px;
+    opacity:.75;
+  }
+  .cw-form{display:flex;flex-direction:column;gap:6px;}
+  .cw-form input{
+    width:100%;
+    font-family:'Space Mono',monospace;
+    font-size:12.5px;
+    padding:7px 8px;
+    border:2px solid var(--ink);
+    background:var(--paper);
+  }
+  .cw-form button{
+    font-family:'Space Mono',monospace;
+    font-weight:700;
+    font-size:12px;
+    background:var(--yellow);
+    color:var(--ink);
+    border:2px solid var(--ink);
+    padding:7px;
+    cursor:pointer;
+  }
+  .cw-msg{font-size:10.5px;margin-top:6px;min-height:12px;}
+  .cw-msg.ok{color:var(--teal);}
+  .cw-msg.err{color:#B0203E;}
+
+  /* HERO */
+  .hero{padding:64px 0 48px;}
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.3fr 1fr;
+    gap:48px;
+    align-items:start;
+  }
+  h1{
+    font-family:'Archivo Black',sans-serif;
+    font-size:clamp(34px,5.4vw,56px);
+    line-height:1.05;
+    margin:0 0 22px;
+    letter-spacing:-.01em;
+  }
+  .lede{font-size:17px;max-width:46ch;margin:0 0 28px;}
+  .lede .strike{text-decoration:line-through;text-decoration-thickness:2px;opacity:.55;}
+
+  .price-stamp{
+    display:inline-flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    width:132px;height:132px;
+    border:3px solid var(--ink);
+    border-radius:50%;
+    transform:rotate(-8deg);
+    background:var(--yellow);
+    text-align:center;
+    margin-bottom:18px;
+  }
+  .price-stamp span:first-child{font-size:11px;text-transform:uppercase;letter-spacing:.08em;}
+  .price-stamp span:last-child{font-family:'Archivo Black',sans-serif;font-size:30px;line-height:1;margin-top:4px;}
+
+  .hero-side{display:flex;flex-direction:column;align-items:flex-start;padding-top:8px;}
+
+  .cta-btn{
+    font-family:'Space Mono',monospace;
+    font-weight:700;
+    font-size:16px;
+    background:var(--pink);
+    color:var(--ink);
+    border:3px solid var(--ink);
+    padding:16px 26px;
+    cursor:pointer;
+    box-shadow:5px 5px 0 var(--ink);
+    transition:transform .12s ease, box-shadow .12s ease;
+    width:100%;
+    text-align:center;
+    text-decoration:none;
+    display:block;
+  }
+  .cta-btn:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink);}
+  .cta-btn:active{transform:translate(1px,1px);box-shadow:2px 2px 0 var(--ink);}
+  .cta-note{font-size:12px;opacity:.65;margin-top:10px;}
+
+  /* SECTIONS */
+  .section{padding:56px 0;border-bottom:3px solid var(--line);}
+  .section:last-of-type{border-bottom:none;}
+  .section-head{font-family:'Archivo Black',sans-serif;font-size:clamp(22px,3vw,30px);margin:0 0 28px;}
+
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .card{
+    border:3px solid var(--ink);
+    background:var(--paper-dark);
+    padding:16px;
+    min-height:120px;
+    display:flex;flex-direction:column;justify-content:space-between;
+  }
+  .card:nth-child(3n+1){background:var(--pink);}
+  .card:nth-child(3n+2){background:var(--yellow);}
+  .card .count{font-family:'Archivo Black',sans-serif;font-size:26px;}
+  .card .label{font-size:12.5px;}
+
+  .bonus{
+    margin-top:24px;
+    border:3px dashed var(--ink);
+    padding:18px 20px;
+    font-size:14px;
+    background:var(--teal);
+    color:var(--paper);
+  }
+  .bonus strong{font-family:'Archivo Black',sans-serif;}
+
+  .flow{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:13.5px;}
+  .flow .bad{border:3px solid var(--ink);padding:14px 18px;background:var(--paper-dark);}
+  .flow .arrow{font-size:22px;}
+  .steps{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;}
+  .steps span{border:3px solid var(--ink);background:var(--yellow);padding:10px 16px;font-weight:700;}
+
+  .tags{display:flex;flex-wrap:wrap;gap:10px;}
+  .tags span{border:3px solid var(--ink);padding:8px 14px;font-size:13px;background:var(--paper);}
+
+  .faq-item{border-top:3px solid var(--ink);padding:18px 0;}
+  .faq-item:last-child{border-bottom:3px solid var(--ink);}
+  .faq-q{font-weight:700;margin:0 0 6px;}
+  .faq-q::before{content:"Q: ";}
+  .faq-a{margin:0;opacity:.85;}
+  .faq-a::before{content:"A: ";font-weight:700;opacity:1;}
+
+  .final{padding:64px 0 80px;text-align:center;}
+  .final h2{font-family:'Archivo Black',sans-serif;font-size:clamp(26px,4vw,38px);margin:0 0 28px;}
+  .final .cta-btn{max-width:340px;margin:0 auto;}
+  .final .cta-note{margin-top:10px;}
+
+  footer{padding:20px 0 40px;font-size:12px;opacity:.7;text-align:center;}
+  footer a{text-decoration:underline;}
+
+  @media (max-width:760px){
+    .hero-grid{grid-template-columns:1fr;}
+    .cards{grid-template-columns:repeat(2,1fr);}
+    .header-right{width:100%;justify-content:flex-start;}
+    .capture-widget{width:100%;}
+  }
+
+  /* flashing click-and-pay banner */
+  .flash-bar{
+    display:block;
+    text-align:center;
+    font-family:'Space Mono',monospace;
+    font-weight:700;
+    font-size:14px;
+    letter-spacing:.02em;
+    padding:12px 16px;
+    text-decoration:none;
+    color:var(--ink);
+    background:var(--yellow);
+    border-bottom:3px solid var(--ink);
+    animation:flashPulse 1.1s infinite;
+  }
+  @keyframes flashPulse{
+    0%,100%{background:var(--yellow);}
+    50%{background:var(--pink);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .flash-bar{animation:none;}
+  }
+
+  /* bottom pay-now section */
+  .pay-section{padding:56px 0 64px;text-align:center;border-bottom:3px solid var(--line);}
+  .pay-section h2{font-family:'Archivo Black',sans-serif;font-size:clamp(24px,3.6vw,32px);margin:0 0 14px;}
+  .pay-section p{font-size:14px;opacity:.8;max-width:44ch;margin:0 auto 26px;}
+  .pay-open-btn{
+    font-family:'Space Mono',monospace;
+    font-weight:700;
+    font-size:16px;
+    background:var(--pink);
+    color:var(--ink);
+    border:3px solid var(--ink);
+    padding:16px 30px;
+    cursor:pointer;
+    box-shadow:5px 5px 0 var(--ink);
+  }
+  .pay-form{
+    max-width:360px;
+    margin:24px auto 0;
+    display:none;
+    border:3px solid var(--ink);
+    background:var(--paper-dark);
+    padding:22px;
+    text-align:left;
+  }
+  .pay-form.open{display:block;}
+  .pay-form label{display:block;font-size:12px;margin:0 0 6px;}
+  .pay-form input{
+    width:100%;
+    font-family:'Space Mono',monospace;
+    font-size:14px;
+    padding:10px 12px;
+    border:3px solid var(--ink);
+    background:var(--paper);
+    margin-bottom:14px;
+  }
+  .pay-form .submit-btn{
+    width:100%;
+    font-family:'Space Mono',monospace;
+    font-weight:700;
+    font-size:15px;
+    background:var(--yellow);
+    color:var(--ink);
+    border:3px solid var(--ink);
+    padding:13px;
+    cursor:pointer;
+    box-shadow:4px 4px 0 var(--ink);
+  }
+  .pay-form .field-error{font-size:11px;color:var(--red,#B0203E);display:none;margin:-10px 0 12px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-row">
+    <div class="brand">Digital Income Kit</div>
+    <div class="header-right">
+      <a class="pay-tab" href="https://rzp.io/rzp/USS4tum" target="_blank" rel="noopener">Pay</a>
+      <!-- Single email + mobile capture widget on the whole site, top-right corner -->
+      <div class="capture-widget">
+        <div class="cw-label">Get updates</div>
+        <form class="cw-form" id="cwForm">
+          <input type="email" id="cwEmail" placeholder="Email" required>
+          <input type="tel" id="cwMobile" placeholder="Mobile no." required inputmode="numeric">
+          <button type="submit">Notify me</button>
+        </form>
+        <div class="cw-msg" id="cwMsg"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<a class="flash-bar" href="#pay-now">👉 Click &amp; Pay Here — Only ₹29 👈</a>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>100 ChatGPT Prompts for Small Businesses</h1>
+      <p class="lede">
+        <span class="strike">Stop staring at a blank screen</span> wondering what to post.
+        Get 100 ready-to-use prompts for social captions, Reels, sales messages, and more —
+        built for small business owners, not marketing teams.
+      </p>
+    </div>
+    <div class="hero-side">
+      <div class="price-stamp">
+        <span>Only</span>
+        <span>₹29</span>
+      </div>
+      <a class="cta-btn" href="https://rzp.io/rzp/USS4tum" target="_blank" rel="noopener">Get the 100 prompts</a>
+      <div class="cta-note">Instant PDF download after payment</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 class="section-head">What you'll get</h2>
+    <div class="cards">
+      <div class="card"><span class="count">20</span><span class="label">Instagram content prompts</span></div>
+      <div class="card"><span class="count">15</span><span class="label">Caption prompts</span></div>
+      <div class="card"><span class="count">15</span><span class="label">Reel prompts</span></div>
+      <div class="card"><span class="count">10</span><span class="label">WhatsApp marketing prompts</span></div>
+      <div class="card"><span class="count">10</span><span class="label">Sales prompts</span></div>
+      <div class="card"><span class="count">10</span><span class="label">Customer-service prompts</span></div>
+      <div class="card"><span class="count">10</span><span class="label">Business-planning prompts</span></div>
+      <div class="card"><span class="count">10</span><span class="label">Product-description prompts</span></div>
+    </div>
+    <div class="bonus"><strong>Bonus —</strong> 20 additional content ideas for your business, included free.</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 class="section-head">Why you'll love it</h2>
+    <div class="flow">
+      <div class="bad">"What should I tell ChatGPT?"</div>
+      <span class="arrow">→</span>
+      <div class="steps">
+        <span>Copy</span><span>Paste</span><span>Customize</span><span>Generate</span>
+      </div>
+    </div>
+    <p style="margin-top:20px;font-size:14px;max-width:52ch;">No complicated AI knowledge required. Every prompt is written to work the moment you paste it in.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 class="section-head">Who is this for?</h2>
+    <div class="tags">
+      <span>Small business owners</span>
+      <span>Instagram sellers</span>
+      <span>Freelancers</span>
+      <span>Coaches</span>
+      <span>Consultants</span>
+      <span>Home businesses</span>
+      <span>Local businesses</span>
+      <span>Beginners using ChatGPT</span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 class="section-head">Frequently asked questions</h2>
+    <div class="faq-item">
+      <p class="faq-q">Is this a physical product?</p>
+      <p class="faq-a">No. This is a digital PDF.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">Do I need ChatGPT?</p>
+      <p class="faq-a">The prompts are designed primarily for ChatGPT, though you can adapt them for other AI tools.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">Is this a subscription?</p>
+      <p class="faq-a">No. This is a one-time purchase.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">Will I receive a physical book?</p>
+      <p class="faq-a">No. The product is delivered digitally.</p>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Ready to create content faster?</h2>
+    <a class="cta-btn" href="https://rzp.io/rzp/USS4tum" target="_blank" rel="noopener">Get instant access — ₹29</a>
+    <div class="cta-note">Instant PDF download after payment</div>
+  </div>
+</section>
+
+<section class="pay-section" id="pay-now">
+  <div class="wrap">
+    <h2>Pay ₹29 &amp; get your prompts</h2>
+    <p>Enter your email and mobile number so we can send your payment confirmation and PDF.</p>
+
+    <button class="pay-open-btn" id="payOpenBtn" type="button">Pay Now</button>
+
+    <form class="pay-form" id="payForm">
+      <label for="payEmail">Email</label>
+      <input type="email" id="payEmail" required placeholder="you@example.com">
+      <div class="field-error" id="emailError">Please enter a valid email address.</div>
+
+      <label for="payMobile">Mobile number</label>
+      <input type="tel" id="payMobile" required placeholder="10-digit mobile number" inputmode="numeric">
+      <div class="field-error" id="mobileError">Please enter a valid 10-digit mobile number.</div>
+
+      <button class="submit-btn" type="submit">Continue to Payment →</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  Digital Income Kit — Create. Sell. Automate.<br>
+  Questions or issues? Write to us at <a href="mailto:digitalincome7777@gmail.com">digitalincome7777@gmail.com</a>
+</footer>
+
+<script>
+  const cwForm = document.getElementById("cwForm");
+  const cwMsg = document.getElementById("cwMsg");
+
+  cwForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const email = document.getElementById("cwEmail").value.trim();
+    const mobile = document.getElementById("cwMobile").value.trim().replace(/\D/g, "");
+
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    const mobileOk = /^\d{10}$/.test(mobile);
+
+    if (!emailOk || !mobileOk) {
+      cwMsg.textContent = "Enter a valid email and 10-digit mobile no.";
+      cwMsg.className = "cw-msg err";
+      return;
+    }
+
+    const subject = encodeURIComponent("New signup - 100 ChatGPT Prompts landing page");
+    const body = encodeURIComponent(`Email: ${email}\nMobile: ${mobile}`);
+    window.location.href = `mailto:digitalincome7777@gmail.com?subject=${subject}&body=${body}`;
+
+    cwMsg.textContent = "Thanks! Opening your mail app to confirm.";
+    cwMsg.className = "cw-msg ok";
+    cwForm.reset();
+  });
+
+  const RAZORPAY_LINK = "https://rzp.io/rzp/USS4tum";
+
+  const openBtn = document.getElementById("payOpenBtn");
+  const form = document.getElementById("payForm");
+
+  openBtn.addEventListener("click", () => {
+    form.classList.toggle("open");
+    if (form.classList.contains("open")) {
+      document.getElementById("payEmail").focus();
+    }
+  });
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const emailInput = document.getElementById("payEmail");
+    const mobileInput = document.getElementById("payMobile");
+    const emailError = document.getElementById("emailError");
+    const mobileError = document.getElementById("mobileError");
+
+    const email = emailInput.value.trim();
+    const mobile = mobileInput.value.trim().replace(/\D/g, "");
+
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    const mobileOk = /^\d{10}$/.test(mobile);
+
+    emailError.style.display = emailOk ? "none" : "block";
+    mobileError.style.display = mobileOk ? "none" : "block";
+
+    if (!emailOk || !mobileOk) return;
+
+    // Best-effort prefill so Razorpay's checkout — and its automatic
+    // payment-confirmation SMS/email — already has the customer's details.
+    // Prefill support can vary by Razorpay link type; this degrades
+    // gracefully to a normal checkout if the link ignores the params.
+    const url = new URL(RAZORPAY_LINK);
+    url.searchParams.set("email", email);
+    url.searchParams.set("contact", mobile);
+
+    window.location.href = url.toString();
+  });
+</script>
+
+</body>
+</html>
